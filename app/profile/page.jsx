@@ -34,13 +34,10 @@ const MyProfile = () => {
 
     if (hasConfirmed) {
       try {
-        console.log("entro al try del delete!!")
         await fetch(`/api/prompt/${post._id.toString()}`, {
           method: "DELETE",
         });
-
         const filteredPosts = myPosts.filter((item) => item._id !== post._id);
-        console.log("filteredPosts: ", filteredPosts)
 
         setMyPosts(filteredPosts);
       } catch (error) {
@@ -51,8 +48,8 @@ const MyProfile = () => {
 
   return (
     <Profile
-      name='My'
-      desc='Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination'
+      name="My"
+      desc="Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination"
       data={myPosts}
       handleEdit={handleEdit}
       handleDelete={handleDelete}
