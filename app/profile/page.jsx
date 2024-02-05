@@ -37,6 +37,7 @@ const MyProfile = () => {
         await fetch(`/api/prompt/${post._id.toString()}`, {
           method: "DELETE",
         });
+
         const filteredPosts = myPosts.filter((item) => item._id !== post._id);
 
         setMyPosts(filteredPosts);
@@ -48,8 +49,8 @@ const MyProfile = () => {
 
   return (
     <Profile
-      name="My"
-      desc="Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination"
+      name='My'
+      desc='Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination'
       data={myPosts}
       handleEdit={handleEdit}
       handleDelete={handleDelete}
